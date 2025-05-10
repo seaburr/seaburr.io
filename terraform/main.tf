@@ -1,12 +1,12 @@
-resource "digitalocean_app" "seaburr-io" {
+resource "digitalocean_app" "blink" {
     spec {
         domains  = [
-            "seaburr.io",
+            "blink.seaburr.io",
         ]
         features = [
             "buildpack-stack=ubuntu-22",
         ]
-        name     = "seaburr-io"
+        name     = "blink"
         region   = "nyc"
 
         alert {
@@ -21,7 +21,7 @@ resource "digitalocean_app" "seaburr-io" {
         ingress {
             rule {
                 component {
-                    name                 = "seaburr-io"
+                    name                 = "blink"
                     preserve_path_prefix = false
                     rewrite              = null
                 }
@@ -39,8 +39,8 @@ resource "digitalocean_app" "seaburr-io" {
             dockerfile_path   = null
             environment_slug  = "html"
             error_document    = "404.html"
-            index_document    = null
-            name              = "seaburr-io"
+            index_document    = "index.html"
+            name              = "blink"
             output_dir        = null
             source_dir        = "/"
 
