@@ -1,4 +1,4 @@
-resource "digitalocean_app" "seaburr" {
+resource "digitalocean_app" "seaburr-io" {
     spec {
         domains  = [
             "seaburr.io",
@@ -6,7 +6,7 @@ resource "digitalocean_app" "seaburr" {
         features = [
             "buildpack-stack=ubuntu-22",
         ]
-        name     = "seaburr.io"
+        name     = "seaburr-io"
         region   = "nyc"
 
         alert {
@@ -21,7 +21,7 @@ resource "digitalocean_app" "seaburr" {
         ingress {
             rule {
                 component {
-                    name                 = "seaburr.io"
+                    name                 = "seaburr-io"
                     preserve_path_prefix = false
                     rewrite              = null
                 }
@@ -40,7 +40,7 @@ resource "digitalocean_app" "seaburr" {
             environment_slug  = "html"
             error_document    = "404.html"
             index_document    = null
-            name              = "seaburr"
+            name              = "seaburr-io"
             output_dir        = null
             source_dir        = "/"
 
