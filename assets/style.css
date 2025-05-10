@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: url('assets/SpaceMono-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: #dcdcdc;
+    color: #000000;
+    line-height: 1.6;
+    padding: 2rem;
+    font-size: 1.0rem;
+}
+
+main {
+    max-width: min(80ch, 85%);
+    margin: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+  
+h3 {
+    font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.0rem;
+}
+
+h1, h2, h3 {
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+  }
+
+section {
+    margin-bottom: 2rem;
+}
+
+section {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+}
+
+ul {
+    margin: 0.5rem 0 0 1rem;
+    padding-left: 1rem;
+    list-style-type: disc;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #00c0cc;
+  text-decoration: none;
+  padding: 0 0.1rem;
+  border-radius: 2px;
+}
+
+.blinker {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  color: inherit;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.9rem;
+    font-size: 0.75rem;
+}
+
+td {
+    padding: 0.2rem 0rem;
+    border: none;
+    text-align: center;
+}
+
+button.control-btn {
+  position: fixed;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 0.1rem 0.25rem;
+  cursor: pointer;
+  z-index: 999;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+button.control-btn:hover {
+  opacity: 0.6;
+}
+
+button#print-btn {
+  top: 1rem;
+  left: 1rem;
+}
+
+button#darkmode-btn {
+  top: 1rem;
+  right: 1rem;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #dcdcdc;
+}
+
+body.dark-mode footer {
+  color: #aaa;
+}
+
+@media print {
+    @page {
+      margin: 1;
+    }
+  
+    body {
+      background: #fff !important;
+      color: #000 !important;
+      font-size: 8pt;
+      padding-bottom: 1in;
+    }
+  
+    main {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      widows: 3;
+      orphans: 3;
+    }
+  
+    h1, h2, h3 {
+      margin: 0.5rem 0 0.25rem 0;
+    }
+  
+    section {
+      margin-bottom: 1.0rem;
+    }
+  
+    ul {
+      margin: 0.5rem 0 0 1rem;
+      padding-left: 0.75rem;
+    }
+  
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  
+    hr {
+      border: none;
+      border-top: 1px solid #000;
+    }
+  
+    footer {
+      display: none;
+    }
+  }
+
+  @media print {
+    #darkmode-btn,
+    #print-btn,
+    .control-btn {
+      display: none !important;
+    }
+  }
